@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        {% include "search/_search-form" %}
+        {% set entries = craft.entries.section('resources').all() %}
+
+        {% for entry in entries %}
+            <h1>{{ entry.title }}</h1>
+            <p>{{ entry.address }}</p>
+            <p>{{ entry.website }}</p>
+            <hr>
+
+        {% endfor %}
+
+
+        test
+
+        {% for entries in craft.entries.section('blog').limit(10).all() %}
+
+
+            {{ entry.title }}
+            {{ entry.blogIntroduction }}
+            <p>
+                {{ entry.blogBody }}
+            </p>
+            {{ entry.url }}
+
+        {% endfor %}
+    </body>
+</html></body></html>

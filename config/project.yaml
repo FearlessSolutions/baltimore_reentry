@@ -1,0 +1,371 @@
+categoryGroups:
+  0f6a32dd-aa72-4be7-b483-4b8ccdc18bbb:
+    name: County
+    handle: county
+    structure:
+      uid: 7f6d46ac-532f-4ba2-97f5-b2915c88fef6
+      maxLevels: null
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        hasUrls: true
+        uriFormat: 'county/{slug}'
+        template: ''
+  16188be0-2d87-448c-b87f-729b2309171b:
+    name: Neighborhood
+    handle: neighborhood
+    structure:
+      uid: 6c94c424-0fcf-4859-b236-71b5bafcec6a
+      maxLevels: null
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        hasUrls: true
+        uriFormat: 'neighborhood/{slug}'
+        template: neighborhood/_category
+  a86c0076-0c64-4739-b493-8d356e2a1dc6:
+    name: 'Service Type'
+    handle: serviceType
+    structure:
+      uid: 00601320-9dd6-4f90-b9d2-3abeeccd0480
+      maxLevels: null
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        hasUrls: true
+        uriFormat: 'service-type/{slug}'
+        template: service-type/_category
+dateModified: 1570847064
+email:
+  fromEmail: felix@xcelldesigns.com
+  fromName: 'Baltimore Reentry Portal'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  7a2d9e11-3937-4ef2-84d8-89ef82e75ee8:
+    name: Resources
+  89326e32-e589-406c-9113-965d4e227575:
+    name: Common
+  9e1bde20-7e32-4a31-9a84-c8401e67faf9:
+    name: Pages
+  e4470378-1568-4303-85ba-b03db51ae598:
+    name: Blog
+fields:
+  3e2ddf3a-0484-4a5b-8083-9856e1b52556:
+    name: 'Page Copy'
+    handle: pageCopy
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\ckeditor\Field
+    settings:
+      purifierConfig: ''
+      purifyHtml: '1'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 9e1bde20-7e32-4a31-9a84-c8401e67faf9
+  60b08edb-c2d4-4d48-9b7c-05399a7c7d8b:
+    name: Address
+    handle: address
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    fieldGroup: 7a2d9e11-3937-4ef2-84d8-89ef82e75ee8
+    contentColumnType: text
+  74d9c49f-65ee-4a9d-a957-a3d8f1e1b96b:
+    name: Quadrant
+    handle: quadrant
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: ''
+      sources: '*'
+      source: 'group:16188be0-2d87-448c-b87f-729b2309171b'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 7a2d9e11-3937-4ef2-84d8-89ef82e75ee8
+  8aa74186-4baf-43c4-95fc-72fbe5f95816:
+    name: Neighborhood
+    handle: neighborhood
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: ''
+      sources: '*'
+      source: 'group:16188be0-2d87-448c-b87f-729b2309171b'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 7a2d9e11-3937-4ef2-84d8-89ef82e75ee8
+  9861eca4-d26e-4841-95d5-59c643146211:
+    name: 'Service Type'
+    handle: serviceType
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      branchLimit: ''
+      sources: '*'
+      source: 'group:16188be0-2d87-448c-b87f-729b2309171b'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+    fieldGroup: 7a2d9e11-3937-4ef2-84d8-89ef82e75ee8
+    contentColumnType: string
+  b4facc30-0dea-4f74-84d9-ee40bf513481:
+    name: 'Blog Body'
+    handle: blogBody
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\ckeditor\Field
+    settings:
+      purifierConfig: ''
+      purifyHtml: '1'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: e4470378-1568-4303-85ba-b03db51ae598
+  d0e025fd-8300-4e8e-a219-6b51283ec47a:
+    name: 'Blog Introduction'
+    handle: blogIntroduction
+    instructions: 'Short, one-liner statement'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: e4470378-1568-4303-85ba-b03db51ae598
+  fa9a43d5-d690-4f4d-b085-11785d90346a:
+    name: phone
+    handle: phone
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7a2d9e11-3937-4ef2-84d8-89ef82e75ee8
+  fc999f87-fb82-43ed-99e7-083f69742599:
+    name: website
+    handle: website
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+    fieldGroup: 7a2d9e11-3937-4ef2-84d8-89ef82e75ee8
+    contentColumnType: string(255)
+plugins:
+  feed-me:
+    settings: null
+    licenseKey: null
+    enabled: '1'
+    schemaVersion: 2.1.2
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+sections:
+  2ef71236-5646-4785-ab7b-9c39188b1249:
+    name: Homepage
+    handle: homepage
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: index.twig
+    entryTypes:
+      be5a1dbd-4980-49cd-b5d9-d03c5b77986d:
+        name: Homepage
+        handle: homepage
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+  650bdff8-2e10-4f25-814b-605a85e86f90:
+    name: Blog
+    handle: blog
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'blog/{slug}'
+        template: blog/_entry
+    entryTypes:
+      e2af7b1b-4fe8-451a-a01b-dd99a7f3df6b:
+        name: Blog
+        handle: blog
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          6e01d090-e0e6-47a5-ae1e-7d08ae6016f6:
+            tabs:
+              -
+                name: Blog
+                sortOrder: 1
+                fields:
+                  b4facc30-0dea-4f74-84d9-ee40bf513481:
+                    required: false
+                    sortOrder: 2
+                  d0e025fd-8300-4e8e-a219-6b51283ec47a:
+                    required: false
+                    sortOrder: 1
+  73fc6b7e-fb2e-4818-843d-88a98840932a:
+    name: Pages
+    handle: pages
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{slug}'
+        template: pages/_entry
+    entryTypes:
+      2a62c60a-e565-4278-ac01-24ff4c343878:
+        name: Pages
+        handle: pages
+        hasTitleField: true
+        titleLabel: 'Page Title'
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          fc577098-5bd4-4d95-beb9-c472b790fe37:
+            tabs:
+              -
+                name: Pages
+                sortOrder: 1
+                fields:
+                  3e2ddf3a-0484-4a5b-8083-9856e1b52556:
+                    required: false
+                    sortOrder: 1
+  d5d2873c-f0dc-427a-ab78-79fa9b4f8f20:
+    name: Resources
+    handle: resources
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      e1d8c196-d767-42ee-b4e9-1addf660961a:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'resources/{slug}'
+        template: resources/_entry
+    entryTypes:
+      be4f8fb0-76ab-41f3-ad51-2589c80f5a81:
+        name: Resources
+        handle: resources
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          7a81f60a-04d5-4b8c-ae5f-ce6677de154f:
+            tabs:
+              -
+                name: Resources
+                sortOrder: 1
+                fields:
+                  60b08edb-c2d4-4d48-9b7c-05399a7c7d8b:
+                    required: false
+                    sortOrder: 5
+                  74d9c49f-65ee-4a9d-a957-a3d8f1e1b96b:
+                    required: false
+                    sortOrder: 1
+                  8aa74186-4baf-43c4-95fc-72fbe5f95816:
+                    required: false
+                    sortOrder: 2
+                  9861eca4-d26e-4841-95d5-59c643146211:
+                    required: false
+                    sortOrder: 6
+                  fa9a43d5-d690-4f4d-b085-11785d90346a:
+                    required: false
+                    sortOrder: 3
+                  fc999f87-fb82-43ed-99e7-083f69742599:
+                    required: false
+                    sortOrder: 4
+siteGroups:
+  b3e8fce9-eb59-4498-a3d0-252695f92bed:
+    name: 'Baltimore Reentry Portal'
+sites:
+  e1d8c196-d767-42ee-b4e9-1addf660961a:
+    siteGroup: b3e8fce9-eb59-4498-a3d0-252695f92bed
+    name: 'Baltimore Reentry Portal'
+    handle: default
+    language: en-US
+    hasUrls: true
+    baseUrl: ''
+    sortOrder: 1
+    primary: true
+system:
+  edition: pro
+  live: true
+  name: 'Baltimore Reentry Portal'
+  timeZone: America/New_York
+  schemaVersion: 3.3.3
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''

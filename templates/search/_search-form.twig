@@ -1,0 +1,34 @@
+{% block content %}
+    {% set searchQueryKeywords = craft.app.request.getParam('q') %}
+    {% set searchQuerySection = craft.app.request.getParam('section') %}
+
+    {% set results = craft.entries()
+        .section(searchQuerySection)
+        .search(searchQueryKeywords)
+        .orderBy('score')
+        .all() 
+    %}
+
+    {% set resultsGroupedBySection = results | group('section.handle') %}
+
+    {% set allSections = craft.query()
+        .select('name, handle')
+        .from('sections')
+        .where("handle in ('resources','blog')")
+        .all() 
+    %}
+
+    <form action="{{ url('search/results') }}">
+        <input type="search" name="q" placeholder="Search for a resource" value="{{ searchQueryKeywords }}">
+        <select name="section" class="form-control select2 select2-hidden-accessible">
+            <option value="">All</option>
+
+            {% for section in allSections%}
+                <option value="{{ section.handle }}">{{ section.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Search Now">
+    </form>
+
+
+{% endblock %}

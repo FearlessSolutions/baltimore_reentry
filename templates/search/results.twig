@@ -1,0 +1,49 @@
+{% set query = craft.app.request.getParam('q') %}
+{% set entries = craft.entries.search(query).orderBy('score').section('resources').all() %}
+
+<h1>Search Results for "{{ query }}"</h1>
+
+{% if entries | length %}
+    {% include "search/_search-form" %}
+    <p>Here are your results for "{{ query }}</p>
+
+    <ul>
+        {% for entry in entries %}
+            <li>
+                <a href="{{ entry.url }}">{{ entry.title}}
+                </a>
+                <h1>{{ entry.title }}</h1>
+                <p>{{ entry.address }}</p>
+                <p>{{ entry.website }}</p>
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Your search didn't return any results. Please try again.</p>
+    {% include "search/_search-form" %}
+{% endif %}
+
+
+{% block content %}
+    {% set searchQueryKeywords = craft.app.request.getParam('q') %}
+    {% set searchQuerySection = craft.app.request.getParam('section') %}
+
+    {% set results = craft.entries()
+        .section(searchQuerySection)
+        .search(searchQueryKeywords)
+        .orderBy('score')
+        .all() 
+    %}
+
+    {% set resultsGroupedBySection = results | group('section.handle') %}
+
+    {% set allSections = craft.query()
+        .select('name, handle')
+        .from('sections')
+        .where("handle in ('resources','blog')")
+        .all() 
+    %}
+
+
+{% endblock %}
